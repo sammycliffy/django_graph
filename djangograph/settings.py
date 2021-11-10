@@ -174,5 +174,5 @@ ACCOUNT_USERNAME_REQUIRED = False
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
-    "https://festive-euler-485782.netlify.app"
+    "https://nifty-kowalevski-7df46f.netlify.app/"
 ]
