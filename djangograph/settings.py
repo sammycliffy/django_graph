@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -179,3 +180,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "https://nifty-kowalevski-7df46f.netlify.app"
 ]
+BASE_DIR = os.path.abspath(os.path.join(__file__, '../../../'))
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
