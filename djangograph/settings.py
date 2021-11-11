@@ -98,7 +98,9 @@ WSGI_APPLICATION = 'djangograph.wsgi.application'
 DATABASE_URL = 'postgres://ggunnkrpdwngxs:bb645b53219da7b08fafea62ee65b814eb911057808d271372321d3b5856f12f@ec2-44-193-182-0.compute-1.amazonaws.com:5432/d16mr6vmr18epk'
 
 DATABASES = {
-'default': dj_database_url.config()
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
