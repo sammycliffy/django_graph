@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-!@a-pbj#jrmn7siwjs_9bl%q0thxo+%=l$=9h^x*h1_%sx2h)%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['djangograph.herokuapp.com']
+ALLOWED_HOSTS = ['djangograph.herokuapp.com',
+'localhost'
+]
 
 
 # Application definition
@@ -175,5 +177,5 @@ ACCOUNT_USERNAME_REQUIRED = False
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
-    "https://nifty-kowalevski-7df46f.netlify.app/"
+    "https://nifty-kowalevski-7df46f.netlify.app"
 ]

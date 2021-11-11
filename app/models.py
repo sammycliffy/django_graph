@@ -105,20 +105,24 @@ class User(AbstractUser):
         return str(self.email)
 
 class PartyMembers(models.Model):
-    # username = models.CharField(unique=True, blank=True, default=None)
+    username = models.CharField(max_length=140, unique=True, blank=False, null=True)
     full_name = models.CharField(max_length=140, blank=False, null=True)
     email = models.EmailField(unique=True, blank=True, default=None)
     phone_number = models.CharField(unique=True, max_length=30)
     qualification = models.CharField(max_length=19, blank=False,)
-    no_of_position = models.CharField(max_length=19, blank=False,)
+    dateOfBirth = models.CharField(max_length=19, blank=False, null=True)
+    sex = models.CharField(max_length=140, blank=False, null=True)
+    maritalStatus =models.CharField(max_length=140, blank=False, null=True)
+    noOfPosition = models.CharField(max_length=19, blank=False,)
     attendance = models.CharField(max_length=19, blank=False,)
     performance = models.CharField(max_length=19, blank=False,)
-    contribution = models.CharField(max_length=19, blank=False,)
-    duration = models.CharField(max_length=19, blank=False,)
-    loyalty = models.CharField(max_length=19, blank=False,)
     partyName = models.CharField(max_length=140, blank=False, null=True)
     partyCode = models.CharField( max_length=19, blank=False, default=None)
+    contribution = models.CharField(max_length=19, blank=False,)
+    duration = models.CharField(max_length=19, blank=False,)
     wardCode = models.CharField( max_length=30, blank=False,)
+    votersPin = models.CharField(max_length=19, blank=False,)
+    position = models.CharField(max_length=19, blank=False,)
 
 
 
@@ -126,18 +130,18 @@ class PartyMembers(models.Model):
 
 	
 # class PartyModel(models.Model):
-#     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="party_user")
-#     partyName = models.CharField(max_length=140, blank=False, null=True)
-#     partyCode = models.CharField( max_length=19, blank=False, default=None)
-#     wardCode = models.CharField( max_length=30, blank=False,)
-#     votersCard = models.CharField(max_length=19, blank=False,)
-#     registrationDate = models.DateField(blank=False)
-#     yearsOfExperience = models.CharField(max_length=140, blank=False, null=True)
-#     durationOfOffice = models.CharField(max_length=140, blank=False, null=True)
-#     performanceInOffice = models.CharField(max_length=140, blank=False, null=True)
-#     maritalStatus =models.CharField(max_length=140, blank=False, null=True)
-#     position = models.CharField(max_length=19, blank=False,)
-#     attendance = models.CharField(max_length=19, blank=False,)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="party_user")
+    # partyName = models.CharField(max_length=140, blank=False, null=True)
+    # partyCode = models.CharField( max_length=19, blank=False, default=None)
+    # wardCode = models.CharField( max_length=30, blank=False,)
+    # votersCard = models.CharField(max_length=19, blank=False,)
+    # registrationDate = models.DateField(blank=False)
+    # yearsOfExperience = models.CharField(max_length=140, blank=False, null=True)
+    # durationOfOffice = models.CharField(max_length=140, blank=False, null=True)
+    # performanceInOffice = models.CharField(max_length=140, blank=False, null=True)
+    # maritalStatus =models.CharField(max_length=140, blank=False, null=True)
+    # position = models.CharField(max_length=19, blank=False,)
+    # attendance = models.CharField(max_length=19, blank=False,)
     
     
 
