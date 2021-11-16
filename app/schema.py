@@ -33,11 +33,12 @@ class PartyMemberInput(graphene.InputObjectType):
 class CreatePartyMember(graphene.Mutation):
     class Arguments:
         party_data = PartyMemberInput()
-
     partyMember = graphene.Field(PartyMemberType)
 
     @staticmethod
     def mutate(root, info, party_data=None):
+        username = party_data.username
+        PartyMembers.objects.filter
         party_instance = PartyMembers(
             username = party_data.username,
             full_name = party_data.full_name,
@@ -66,14 +67,16 @@ class Mutation(graphene.ObjectType):
 
 
 class Query(graphene.ObjectType):
-    all_partyMembers = graphene.List(PartyMemberType)
+    all_partyMembers = DjangoListField(PartyMemberType)
+    partymember = graphene.Field(PartyMemberType, username=graphene.String())
 
-    def resolve_all_books(self, info, **kwargs):
-        return PartyMemberType.objects.all()
+    def resolve_all_partyMembers(self, info, **kwargs):
+        return PartyMembers.objects.all()
+    
+    def resolve_partymember(root, info, username):
+        return PartyMembers.objects.get(username=username)
 
-
-
-
+    
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

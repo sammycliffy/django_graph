@@ -88,19 +88,19 @@ WSGI_APPLICATION = 'djangograph.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-DATABASE_URL = 'postgres://ggunnkrpdwngxs:bb645b53219da7b08fafea62ee65b814eb911057808d271372321d3b5856f12f@ec2-44-193-182-0.compute-1.amazonaws.com:5432/d16mr6vmr18epk'
-
-
 DATABASES = {
-'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# DATABASE_URL = 'postgres://ggunnkrpdwngxs:bb645b53219da7b08fafea62ee65b814eb911057808d271372321d3b5856f12f@ec2-44-193-182-0.compute-1.amazonaws.com:5432/d16mr6vmr18epk'
+
+
+# DATABASES = {
+# 'default': dj_database_url.config()
+# }
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
