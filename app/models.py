@@ -125,9 +125,15 @@ class PartyMembers(models.Model):
     position = models.CharField(max_length=19, blank=False,)
 
 
-
-
-
+class RandomForest(models.Model):
+    contribution = models.CharField(max_length=140, blank=False, null=True)
+    attendance = models.CharField(max_length=140, blank=False, null=True)
+    loyalty = models.CharField(max_length=140, blank=True, default=None)
+    noOfPosition = models.CharField(max_length=140,)
+    classification = models.CharField(max_length=30)
+    duration = models.CharField( max_length=30)
+    
+ 
 	
 # class PartyModel(models.Model):
     # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="party_user")
