@@ -60,6 +60,10 @@ class PerformRandomForest(graphene.Mutation):
         classification = 0
         if int(test_data.attendance) >= 50 and int(test_data.loyalty) >= 5 and int(test_data.contribution) >= 40 and int(test_data.noOfPosition) >= 1 and int(test_data.duration) >= 2:
          classification = 1
+
+
+
+         
         party_instance = RandomForest(
     
     attendance = test_data.attendance,

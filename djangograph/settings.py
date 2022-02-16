@@ -84,9 +84,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djangograph.wsgi.application'
 
-# NEOMODEL_NEO4J_BOLT_URL = os.environ.get('NEO4J_BOLT_URL','bolt://neo4j:neo@localhost:7687')
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+NEOMODEL_NEO4J_BOLT_URL = os.environ.get('NEO4J_BOLT_URL','bolt://neo4j:neo@localhost:7687')
+# Database https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
