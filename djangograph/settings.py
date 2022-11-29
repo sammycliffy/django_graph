@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
+
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,8 +29,8 @@ SECRET_KEY = 'django-insecure-!@a-pbj#jrmn7siwjs_9bl%q0thxo+%=l$=9h^x*h1_%sx2h)%
 DEBUG = True
 
 ALLOWED_HOSTS = ['djangograph.herokuapp.com',
-'localhost'
-]
+                 'localhost'
+                 ]
 
 
 # Application definition
@@ -87,12 +88,12 @@ WSGI_APPLICATION = 'djangograph.wsgi.application'
 # NEOMODEL_NEO4J_BOLT_URL = os.environ.get('NEO4J_BOLT_URL','bolt://neo4j:neo@localhost:7687')
 # Database https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 # DEBUG = config('DEBUG', default=False, cast=bool)
 # DATABASES = {
 #     'default': dj_database_url.config(
@@ -102,11 +103,11 @@ WSGI_APPLICATION = 'djangograph.wsgi.application'
 # DATABASE_URL = 'postgres://ggunnkrpdwngxs:bb645b53219da7b08fafea62ee65b814eb911057808d271372321d3b5856f12f@ec2-44-193-182-0.compute-1.amazonaws.com:5432/d16mr6vmr18epk'
 
 
-DATABASES = {
-'default': dj_database_url.config(
-   
-)
-}
+# DATABASES = {
+# 'default': dj_database_url.config(
+
+# )
+# }
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
@@ -167,10 +168,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'app.User'
 
 GRAPHENE = {
-   'SCHEMA': 'app.schema.schema',
-   'MIDDLEWARE': [
-       'graphql_jwt.middleware.JSONWebTokenMiddleware'
-   ]
+    'SCHEMA': 'app.schema.schema',
+    'MIDDLEWARE': [
+        'graphql_jwt.middleware.JSONWebTokenMiddleware'
+    ]
 }
 
 AUTHENTICATION_BACKEND = [
@@ -192,7 +193,6 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_USERNAME_REQUIRED = False
-
 
 
 CORS_ALLOWED_ORIGINS = [
